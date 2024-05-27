@@ -35,7 +35,7 @@ const data = [
 
 export function Chart() {
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width="100%">
       <BarChart data={data}>
         <XAxis
           dataKey="name"
@@ -46,7 +46,7 @@ export function Chart() {
         />
         <YAxis
           stroke="#888888"
-          fontSize={12}
+          fontSize={0}
           tickLine={false}
           axisLine={false}
           tickFormatter={(value) => ``}

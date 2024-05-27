@@ -62,8 +62,8 @@ const CustomAccordianItem = ({
 export function ProfileSetup() {
   const [step, setStep] = useState({ num: 1, desc: "Add Basic Details" });
   return (
-    <div className="flex gap-4 w-full justify-between">
-      <Accordion type="single" collapsible className="w-[40%]">
+    <div className="flex flex-col lg:flex-row  gap-4 w-full justify-between">
+      <Accordion type="single" collapsible className="lg:w-[40%]">
         <CustomAccordianItem
           itemNumber={1}
           headingContent={"Basic Details"}
@@ -94,7 +94,7 @@ export function ProfileSetup() {
           setStep={setStep}
         />
       </Accordion>
-      <div className="bg-muted/60 rounded-md w-[60%] border h-64 flex items-center justify-center flex-col gap-4">
+      <div className="bg-muted/60 rounded-md lg:w-[60%] border lg:h-64 flex items-center justify-center flex-col gap-4 py-4">
         <h3 className="text-md font-semibold">
           Step {step.num}: {step.desc}
         </h3>
@@ -109,7 +109,7 @@ export function ProfileSetup() {
                   key={index}
                   height={80}
                   width={80}
-                  className="rounded-md"
+                  className="h-10 w-10 rounded-md"
                 />
               );
             })}

@@ -21,19 +21,20 @@ const Stat = ({ text, val }: { text: string; val: string }) => {
 export default function Dashboard() {
   return (
     <>
-      <div className="flex items-center w-full h-20 bg-secondary rounded-lg border flex items-center justify-between px-8">
-        <div className="flex gap-2 text-xl">
-          <p className="text-black/60">
+      <div className="flex items-center w-full max-w-[90vw] lg:h-20 bg-secondary rounded-lg border flex-col md:flex-row items-center justify-between px-2 py-4 lg:px-8 gap-2">
+        <div className="flex gap-2  md:text-lg lg:text-xl flex-1">
+          <p className="text-black/60 w-full ">
             Your profile is live at{" "}
-            <span className="text-black font-semibold underline">
+            <span className="text-black font-semibold underline ">
               yournexthire.ai/kushagra
-            </span>
+            </span>{" "}
+            <Edit className="inline" />{" "}
+            <span className="text-sm underline">Edit</span>
           </p>
-          <button className="flex items-center gap-1">
-            <Edit /> <p className="text-sm underline">Edit</p>
-          </button>
+
+          <button className="flex items-center gap-1"></button>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 justify-between gap-4 w-full md:w-auto lg:flex-row items-center">
           <button className="flex items-center gap-1">
             <Eye />
             <p className="underline semibold">Preview</p>
@@ -42,18 +43,18 @@ export default function Dashboard() {
         </div>
       </div>
       <div
-        className="flex flex-1 items-center justify-center rounded-lg   "
+        className="flex flex-1 max-w-[90vw] items-center justify-center rounded-lg   "
         x-chunk="dashboard-02-chunk-1"
       >
         <ProfileSetup />
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-w-[90vw] flex-col lg:flex-row">
         <div className="flex-1">
-          <p className="text-semibold pb-2">
+          <p className="text-semibold pb-2 text-xs lg:text-md">
             Check out some most viewed YourNextHire Pages
           </p>
-          <div className="bg-muted/60 border rounded-md py-2 px-4">
+          <div className="bg-muted/60 border rounded-md py-2 px-2 lg:px-4">
             {profiles.map((profile, index) => {
               return (
                 <div key={index} className="flex justify-between  py-2">
@@ -66,7 +67,7 @@ export default function Dashboard() {
                       className="rounded-full"
                     />
                     <div>
-                      <p>{profile.name}</p>
+                      <p className="text-sm lg:text-md">{profile.name}</p>
                       <p className="text-xs underline text-black/60">
                         {profile.link}
                       </p>
@@ -79,12 +80,12 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="flex-1">
-          <p className="pb-2">Activity</p>
+          <p className="pb-2 text-xs lg:text-md">Activity</p>
 
-          <div className="bg-muted/60 border rounded-md py-4 px-6">
+          <div className="bg-muted/60 border rounded-md py-4 px-2 lg:px-6">
             <p>Recent activity on your page</p>
-            <div className="flex justify-between">
-              <div className="h-44 w-64">
+            <div className="flex justify-between gap-4">
+              <div className="w-full max-w-64">
                 <Chart />
               </div>
               <div className="flex flex-col gap-4 justify-center">
